@@ -1,19 +1,33 @@
-<div class="list-item {{ task?.state }}">
+<div class="checkbox-container {{ task?.state }}">
+
   <label class="checkbox">
     <input
       type="checkbox"
-      [defaultChecked]="task?.state === 'TASK_ARCHIVED'"
+      [defaultChecked]="task?.state === state.checked"
       disabled="true"
       name="checked"
     />
-    <span class="checkbox-custom" (click)="onArchive(task.id)"></span>
+    <span class="checkbox-custom" (click)="onclick()">
+      <ng-container *ngIf="task.state === state.checked" [ngTemplateOutlet]="checkedRef"></ng-container>
+    </span>
   </label>
+
   <div class="title">
-    <input type="text" [value]="task?.title" readonly="true" placeholder="Input title" />
-  </div>
-  <div class="actions">
-    <a *ngIf="task?.state !== 'TASK_ARCHIVED'" (click)="onPin(task.id)">
-      <span class="icon-star"></span>
-    </a>
+    {{task?.title}}
   </div>
 </div>
+
+
+<ng-template #checkedRef>
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0
+			c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7
+			C514.5,101.703,514.499,85.494,504.502,75.496z"/>
+	</g>
+</g>
+
+</svg>
+</ng-template>

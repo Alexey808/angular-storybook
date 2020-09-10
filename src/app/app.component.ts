@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ITask} from './components/task/task.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-storybook';
+  task: ITask = {
+    id: 'id-1',
+    state: 'UNCHECKED',
+    title: 'name-1',
+  };
+
+  public onToggle(task: ITask): void {
+    console.log(task);
+  }
 }

@@ -1,5 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ITask} from './task.interface';
+
+const STATE = {
+  unchecked: 'UNCHECKED',
+  checked: 'CHECKED',
+};
 
 @Component({
   selector: 'app-task',
@@ -7,22 +12,17 @@ import {ITask} from './task.interface';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent {
-  title: string;
   @Input() task: ITask;
+  @Output() onToggle = new EventEmitter<ITask>();
 
-  // tslint:disable-next-line: no-output-on-prefix
-  @Output() onPinTask: EventEmitter<any> = new EventEmitter();
-
-  // tslint:disable-next-line: no-output-on-prefix
-  @Output() onArchiveTask: EventEmitter<any> = new EventEmitter();
+  readonly state = STATE;
 
   constructor() {}
 
-  public onPin(id: any): void {
-    this.onPinTask.emit(id);
-  }
-
-  public onArchive(id: any): void {
-    this.onArchiveTask.emit(id);
+  public onclick(): void {
+    this.task.state = this.task.state === this.state.unchecked
+      ? this.state.checked
+      : this.state.unchecked;
+    this.onToggle.emit(this.task);
   }
 }
