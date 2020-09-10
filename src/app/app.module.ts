@@ -4,12 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskComponent } from './components/task/task.component';
-import { TaskListComponent } from './components/task-list/task-list.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
-    TaskListComponent,
   ],
   imports: [
     BrowserModule,
