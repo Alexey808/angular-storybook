@@ -417,7 +417,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n$color-main: green;\n$color-border: #999;\n\n.checkbox-container {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n\n  input {\n    display: none;\n  }\n\n  .title {\n    padding-left: 5px;\n  }\n\n  .checkbox-custom {\n    border: 1px solid #777;\n    //box-shadow: 0 0 2px 1px transparent;\n    width: 14px;\n    height: 14px;\n    border-radius: 3px;\n    cursor: pointer;\n    display: block;\n    background-color: #f7f7f7;\n    padding: 3px;\n\n    svg {\n      fill: $color-main;\n    }\n  }\n\n  &.CHECKED {\n    .checkbox-custom {\n      border-color: $color-main;\n      //box-shadow: 0 0 2px 1px $color-main;\n    }\n  }\n\n\n}\n\n\n",
+                    "data": "\n$color-main: green;\n$color-border: #999;\n\n.checkbox-container {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n\n  input {\n    display: none;\n  }\n\n  .title {\n    padding-left: 5px;\n  }\n\n  .checkbox-custom {\n    border: 1px solid #777;\n    //box-shadow: 0 0 2px 1px transparent;\n    width: 14px;\n    height: 14px;\n    border-radius: 3px;\n    cursor: pointer;\n    display: block;\n    background-color: #f7f7f7;\n    padding: 3px;\n\n    svg {\n      fill: $color-main;\n    }\n  }\n\n  &.CHECKED {\n    .checkbox-custom {\n      border-color: $color-main;\n      //box-shadow: 0 0 2px 1px $color-main;\n    }\n  }\n\n\n\n\n\n\n\n\n}\n\n\n",
                     "styleUrl": "./task.component.scss"
                 }
             ],
